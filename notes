@@ -1,0 +1,17 @@
+Received?: 660423412019ff2000000399
+
+Device: AP-210344000260(-60)
+
+Services:
+1. FFD5 
+   - FFDA (empty?)
+   - FFD9 (writing)
+2. FFD0 
+   - FFD4 (reading)
+   - FFD1 (empty?)
+
+
+TODO:
+[ ] Half duplex BLE comms on Mac
+[ ] Packet decomposition
+[ ] Write format
