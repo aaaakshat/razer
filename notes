@@ -14,4 +14,4 @@ Services:
 TODO:
 [ ] Half duplex BLE comms on Mac
 [ ] Packet decomposition
-[ ] Write format
+[ ] Get signal writing format
