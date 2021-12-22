@@ -37,7 +37,7 @@ white off: 660423412019E50000000399
 660423412019ff2000000399
 
 
-*Update:*
+**Update:**
 It seems that I can't rebroadcast incoming signals as there is some obfuscation happening. However it seems this BLE controller is the same as the one used in [this nice reverse engineering project](https://urish.medium.com/reverse-engineering-a-bluetooth-lightbulb-56580fcb7546#.puoo705sd) so the signals he's sending should work on our LED strips as well
 
 RGB Format: 56 RR GG BB 00 f0 aa
@@ -53,8 +53,8 @@ SS is the speed each unit is 200ms so 05 is 1 second
 
 
 TODO:
-[ ] Half duplex BLE comms on Mac
-[ ] Packet decomposition
-[ ] Get signal writing format
-[ ] Understand notify signals
+- [ ] Half duplex BLE comms on Mac
+- [ ] Packet decomposition
+- [ ] Get signal writing format
+- [ ] Understand notify signals
 
