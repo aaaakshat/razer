@@ -5,8 +5,7 @@ Have a cheap LED strip that's controlled by a suspicious 1 star app?
 Razer is a lightweight RGB controller that let's you scan and talk to BLE LED strips.
 
 -----
-### Reverse Engineering 
-*(My roomate's LED strip)*
+### Reverse Engineering My Roomate's LED Strip
 
 Received?: 660423412019ff2000000399
 
