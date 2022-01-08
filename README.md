@@ -63,8 +63,10 @@ req.write_by_handle(0x0009, bytes(msg))
 
 
 TODO:
-- [ ] Half duplex BLE comms on Mac
-- [ ] Packet decomposition
-- [ ] Get signal writing format
-- [ ] Understand notify signals
+- [x] Half duplex BLE comms on Mac
+- [x] Packet decomposition
+- [x] Get signal writing format
+- [x] Understand notify signals
+- [x] Test script
+- [x] GUI
 
