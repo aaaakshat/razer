@@ -8,7 +8,6 @@ DEVICE_ID = "21:03:44:00:02:60"
 WRITE_HANDLE = 0x0009
 READ_HANDLE = 0x000c
 
-"""
 scan = DiscoveryService()
 devs = scan.discover(2)
 
@@ -16,7 +15,6 @@ if DEVICE_ID not in devs:
     quit()
 
 req = gr(DEVICE_ID)
-"""
 
 def rgb_to_bytes(r, g, b):
     return bytes(bytearray([0x56, int(hex(r), 16), int(hex(g), 16), int(hex(b), 16), 0x00, 0xf0, 0xaa]))
@@ -43,7 +41,7 @@ def colour_cycle():
     except ValueError:
         delay = 4
 
-    mode = mode_text.get('1.0', 'end-1c')
+    mode = light_mode_text.get('1.0', 'end-1c')
     try :
         mode = int(mode)
     except ValueError:
