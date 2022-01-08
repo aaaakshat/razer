@@ -12,7 +12,7 @@ def main():
     serve = DiscoveryService()
     devices = serve.discover(2)
 
-    for name, address in devices:
+    for name, address in devices.items():
         print("name: {}, address: {}".format(name, address))
 
     print("-----")
