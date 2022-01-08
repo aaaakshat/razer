@@ -8,7 +8,7 @@ DEVICE_ID = "21:03:44:00:02:60"
 WRITE_HANDLE = 0x0009
 READ_HANDLE = 0x000c
 
-scan = DiscoverService
+scan = DiscoveryService()
 devs = scan.discover(2)
 
 if DEVICE_ID not in devs:
@@ -32,7 +32,7 @@ def custom_rgb():
     req.write_by_handle(WRITE_HANDLE, rgb_to_bytes(r, g, b))
 
 def colour_cycle():
-    req.write_by_handle(WRITE_HANDLE, color_cycles_bytes(25, 5))  
+    req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(25, 5))  
 
 root = Tk()
 col_button = Button(root, text="Select colour", command=custom_rgb())
