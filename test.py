@@ -23,13 +23,9 @@ def main():
         req = gr(DEVICE_ID)
         flag = True
         while flag:
-            r = input("R: ")
-            r = int(r)
-            g = input("G: ")
-            g = int(g)
-            b = input("B: ")
-            b = int(b)
-
+            r = int(input("R: "))
+            g = int(input("G: "))
+            b = int(input("B: "))
             req.write_by_handle(0x0009, rgb_to_bytes(r, g, b))
 
             flag = input("wanna put values again? (y/n)") == "y"
