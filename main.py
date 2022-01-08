@@ -12,7 +12,7 @@ scan = DiscoverService
 devs = scan.discover(2)
 
 if DEVICE_ID not in devs:
-    return
+    quit()
 
 req = gr(DEVICE_ID)
 
@@ -22,7 +22,7 @@ def rgb_to_bytes(r, g, b):
 # light mode range (25 - 38); 01 speed is 200ms hence 05 is 1 second
 # default color_cycle_bytes(25, 5)
 def color_cycle_bytes(light_mode, delay):
-    return bytes(bytearray([0xbb, int(hex(light_mode), 16), int(hex(delay), 16), 0x44])
+    return bytes(bytearray([0xbb, int(hex(light_mode), 16), int(hex(delay), 16), 0x44]))
 
 def custom_rgb():
     col = colorchooser.askcolor(title="Select colour")
