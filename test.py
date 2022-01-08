@@ -21,7 +21,7 @@ def main():
 
     if safe:
         req = gr(DEVICE_ID)
-        flag = true
+        flag = True
         while flag:
             r = input("R: ")
             r = int(r)
