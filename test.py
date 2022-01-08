@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from gattlib import DiscoveryService, GATTRequest as gr
+from gattlib import DiscoveryService, GATTRequester as gr
 
 DEVICE_ID = "21:03:44:00:02:60"
 
