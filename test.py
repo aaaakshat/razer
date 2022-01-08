@@ -5,7 +5,7 @@ from gattlib import DiscoveryService, GATTRequester as gr
 DEVICE_ID = "21:03:44:00:02:60"
 
 def rgb_to_bytes(r, g, b):
-    return bytes(bytearray([0x56, bytes.fromhex(hex(r)), bytes.fromhex(hex(g)), bytes.fromhex(hex(b)), 0x00, 0xf0, 0xaa]))
+    return bytes(bytearray([0x56, int(hex(r), 16), int(hex(g), 16), int(hex(b), 16), 0x00, 0xf0, 0xaa]))
 
 
 def main():
