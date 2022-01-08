@@ -17,12 +17,12 @@ MAC:       -
 Local Name:   AP-210344000260
 
 Services:
-1. FFD5 
-    - FFDA (empty?)
-    - FFD9 (writing)
-2. FFD0 
-    - FFD4 (reading)
-    - FFD1 (empty?)
+1. 0xFFD5 
+    - 0xFFDA (empty?)
+    - 0xFFD9 (writing, handle 0x0009)
+2. 0xFFD0 
+    - 0xFFD4 (reading, handle 0x000c)
+    - 0xFFD1 (empty?)
 
 Current understanding:
 660423412019ff2000000399
@@ -50,6 +50,16 @@ Fade format: bb II SS 44
 E.g. all color fade 1 second delay: 0xbb250544
 Where II is the index of lighting mode (25 - 38)
 SS is the speed each unit is 200ms so 05 is 1 second
+
+
+## Writing
+When writing you need to send a bytearray written as bytes to the GATTRequester.
+
+e.g.:
+```python
+msg = bytesarray([0x56, 0xff, 0x08, 0x5a, 0x00, 0xf0, 0xaa])
+req.write_by_handle(0x0009, bytes(msg))
+```
 
 
 TODO:
