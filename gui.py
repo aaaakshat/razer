@@ -32,11 +32,41 @@ def choose_color():
     print(WRITE_HANDLE, rgb_to_bytes(r, g, b))
 
 
+def cycle_colors():
+    delay = delay_text.get('1.0', 'end-1c')
+    try :
+        delay = int(delay)
+    except ValueError:
+        delay = 4
+
+    mode = light_mode_text.get('1.0', 'end-1c')
+    try :
+        mode = int(mode)
+    except ValueError:
+        mode = 1
+
+    if mode > 14 or mode < 1:
+        mode = 1
+
+    mode += 24
+    print(mode, delay)
+
 root = Tk()
 button = Button(root, text = "Select color",
             command = choose_color)
-button.pack()
-root.geometry("300x100")
-root.mainloop()
+l = Label(text = "Delay (/200ms)")
+delay_text = Text(root, height=1, width=15)
+l2 = Label(text = "Light Mode (1 - 14)")
+light_mode_text= Text(root, height=1, width=15)
+cycle_button = Button(root, text="Cycle", command= cycle_colors)
 
+button.pack()
+l.pack()
+delay_text.pack()
+l2.pack()
+light_mode_text.pack()
+cycle_button.pack()
+
+root.geometry("300x200")
+root.mainloop()
 

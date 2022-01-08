@@ -37,12 +37,39 @@ def custom_rgb():
     req.write_by_handle(WRITE_HANDLE, rgb_to_bytes(r, g, b))
 
 def colour_cycle():
-    req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(25, 5))  
+    delay = delay_text.get('1.0', 'end-1c')
+    try :
+        delay = int(delay)
+    except ValueError:
+        delay = 4
+
+    mode = mode_text.get('1.0', 'end-1c')
+    try :
+        mode = int(mode)
+    except ValueError:
+        mode = 1
+
+    if mode > 14 or mode < 1:
+        mode = 1
+
+    mode += 24
+
+    req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(mode, delay))  
 
 root = Tk()
 col_button = Button(root, text="Select colour", command=custom_rgb)
 cycle_button = Button(root, text="Cycle colours", command=colour_cycle)
+l = Label(text = "Delay (/200ms)")
+delay_text = Text(root, height=1, width=15)
+l2 = Label(text = "Light Mode (1 - 14)")
+light_mode_text= Text(root, height=1, width=15)
+
 col_button.pack()
+l.pack()
+delay_text.pack()
+l2.pack()
+light_mode_text.pack()
 cycle_button.pack()
+
 root.geometry("350x200")
 root.mainloop()
