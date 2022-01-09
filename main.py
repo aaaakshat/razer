@@ -58,7 +58,7 @@ def colour_cycle():
 
 def lucky():
     if (randint(0, 1)):
-        req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(randint(37, 56), randint(0, 50))  
+        req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(randint(37, 56), randint(0, 50)))
     else:
         req.write_by_handle(WRITE_HANDLE, rgb_to_bytes(randint(0, 255), randint(0, 255), randint(0, 255)))
 
