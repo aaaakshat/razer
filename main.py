@@ -36,13 +36,13 @@ def custom_rgb():
     req.write_by_handle(WRITE_HANDLE, rgb_to_bytes(r, g, b))
 
 def colour_cycle():
-    delay = delay_text.get('1.0', 'end-1c')
+    delay = delay_text.get()
     try :
         delay = int(delay)
     except ValueError:
         delay = 4
 
-    mode = light_mode_text.get('1.0', 'end-1c')
+    mode = light_mode_text.get()
     try :
         mode = int(mode)
     except ValueError:
@@ -66,9 +66,9 @@ root = Tk()
 col_button = Button(root, text="Custom color picker", command=custom_rgb)
 cycle_button = Button(root, text="Cycle colours", command=colour_cycle)
 l = Label(text = "Delay (/200ms)")
-delay_text = Text(root, height=1, width=15)
+delay_text = Entry(root, width=15)
 l2 = Label(text = "Light Mode (1 - 20)")
-light_mode_text= Text(root, height=1, width=15)
+light_mode_text= Entry(root, width=15)
 lucky_button = Button(root, text="I'm feeling lucky", command=lucky)
 
 col_button.pack(pady=10)
@@ -77,8 +77,8 @@ delay_text.pack()
 l2.pack(pady=10)
 light_mode_text.pack()
 cycle_button.pack(pady=10)
-lucky_button.pack(pady=10)
+lucky_button.pack(pady=20)
 
-root.geometry("350x350")
+root.geometry("350x320")
 root.title("Colormaster")
 root.mainloop()
