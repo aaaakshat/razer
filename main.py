@@ -47,10 +47,10 @@ def colour_cycle():
     except ValueError:
         mode = 1
 
-    if mode > 14 or mode < 1:
+    if mode > 20 or mode < 1:
         mode = 1
 
-    mode += 24
+    mode += 36
 
     req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(mode, delay))  
 
@@ -59,7 +59,7 @@ col_button = Button(root, text="Select colour", command=custom_rgb)
 cycle_button = Button(root, text="Cycle colours", command=colour_cycle)
 l = Label(text = "Delay (/200ms)")
 delay_text = Text(root, height=1, width=15)
-l2 = Label(text = "Light Mode (1 - 14)")
+l2 = Label(text = "Light Mode (1 - 20)")
 light_mode_text= Text(root, height=1, width=15)
 
 col_button.pack()

@@ -51,6 +51,8 @@ E.g. all color fade 1 second delay: 0xbb250544
 Where II is the index of lighting mode (25 - 38)
 SS is the speed each unit is 200ms so 05 is 1 second
 
+II goes from 25 - 38, in denary meaning 37 - 56 = 19 values
+
 
 ## Writing
 When writing you need to send a bytearray written as bytes to the GATTRequester.
