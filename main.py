@@ -3,6 +3,7 @@
 from tkinter import *
 from tkinter import colorchooser 
 from gattlib import DiscoveryService, GATTRequester as gr
+from random import randint
 
 DEVICE_ID = "21:03:44:00:02:60"
 WRITE_HANDLE = 0x0009
@@ -54,6 +55,13 @@ def colour_cycle():
 
     req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(mode, delay))  
 
+
+def lucky():
+    if (randint(0, 1)):
+        req.write_by_handle(WRITE_HANDLE, color_cycle_bytes(randint(37, 56), randint(0, 50))  
+    else:
+        req.write_by_handle(WRITE_HANDLE, rgb_to_bytes(randint(0, 255), randint(0, 255), randint(0, 255)))
+
 root = Tk()
 col_button = Button(root, text="Select colour", command=custom_rgb)
 cycle_button = Button(root, text="Cycle colours", command=colour_cycle)
@@ -61,6 +69,7 @@ l = Label(text = "Delay (/200ms)")
 delay_text = Text(root, height=1, width=15)
 l2 = Label(text = "Light Mode (1 - 20)")
 light_mode_text= Text(root, height=1, width=15)
+lucky_button = Button(root, text="I'm feeling lucky", command=lucky)
 
 col_button.pack()
 l.pack()
@@ -68,6 +77,7 @@ delay_text.pack()
 l2.pack()
 light_mode_text.pack()
 cycle_button.pack()
+lucky_button.pack()
 
 root.geometry("350x200")
 root.mainloop()
