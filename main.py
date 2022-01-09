@@ -10,10 +10,14 @@ WRITE_HANDLE = 0x0009
 READ_HANDLE = 0x000c
 
 scan = DiscoveryService()
-devs = scan.discover(2)
+print("Looking for BLE receiver...")
+devs = scan.discover(5)
 
 if DEVICE_ID not in devs:
+    print("Error: BLE lights not found!")
     quit()
+else:
+    print("Connected!")
 
 req = gr(DEVICE_ID)
 
